@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1029957856742",
+    "firebase_url": "https://customer-sign-in-85fa5.firebaseio.com",
+    "project_id": "customer-sign-in-85fa5",
+    "storage_bucket": "customer-sign-in-85fa5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029957856742:android:64ab1a6eb379e2a815ba27",
+        "android_client_info": {
+          "package_name": "com.washrycustomer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1029957856742-i0irfga2dj5d8dpb3dsfg0mhdb2vsi3h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.washrycustomer",
+            "certificate_hash": "490c2f4f9c1cbb222daa398c99503b16d43ed556"
+          }
+        },
+        {
+          "client_id": "1029957856742-cg6rku15cs2dhdea5svjb2n7jeie6v6j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPW8KPztDUsQ7Ye9SbFeEbEp3e33TViH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1029957856742-cg6rku15cs2dhdea5svjb2n7jeie6v6j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
