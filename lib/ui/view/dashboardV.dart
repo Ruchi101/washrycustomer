@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:washrycustomer/ui/view/loginV.dart';
+import 'package:washrycustomer/ui/view/vendorlistV.dart';
 
 class DashboardV extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _DashboardVState extends State<DashboardV> {
 //    Widget image_carousel = new Container(
 //      height: 345.0,
 //      child: CarouselSlider(
-////        height: 400.0,
+//        height: 400.0,
 //        items: [
 //          'http://pic3.16pic.com/00/55/42/16pic_5542988_b.jpg',
 //          'http://photo.16pic.com/00/38/88/16pic_3888084_b.jpg',
@@ -116,24 +117,39 @@ class _DashboardVState extends State<DashboardV> {
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
                     textAlign: TextAlign.start,
                   ),
-                  Icon(Icons.local_laundry_service,size: 30,),
+                  Icon(
+                    Icons.local_laundry_service,
+                    size: 30,
+                  ),
                 ],
               ),
             ),
-            GridView.count(
-              shrinkWrap: true,
-              crossAxisCount: 3,
-              children: new List<Widget>.generate(9, (index) {
-                return new GridTile(
-                    child: Card(
-                  elevation: 5,
-                  color: Colors.white70,
-                  child: Center(
-                    child: Text('tile $index'),
-                  ),
-                ));
-              }),
-            )
+            GestureDetector(
+              onTap: () {
+                print('tapped');
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => VendorListV()));
+              },
+              child: GridView.builder(
+                shrinkWrap: true,
+                itemCount: 9,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3),
+                itemBuilder: (BuildContext context, int index) {
+                  return new Card(
+                    child: GridTile(
+                      child: Center(
+                        child: Text('item $index'),
+                      ),
+                      footer: Text(
+                        'Kilogram',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),

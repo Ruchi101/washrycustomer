@@ -17,7 +17,8 @@ class LoginV extends StatelessWidget {
           children: [
             Text(
               'Sign in',
-              style: TextStyle(fontSize: 30,
+              style: TextStyle(
+                fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -54,13 +55,10 @@ class LoginV extends StatelessWidget {
                     text: 'Sign in with Google',
                     onPressed: () {
                       signInWithGoogle().whenComplete(() {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return DashboardV();
-                            },
-                          ),
-                        );
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DashboardV()));
                       });
                     },
                   ),
@@ -81,14 +79,13 @@ class LoginV extends StatelessWidget {
   }
 }
 
-
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
 
 Future<String> signInWithGoogle() async {
   final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
   final GoogleSignInAuthentication googleSignInAuthentication =
-  await googleSignInAccount.authentication;
+      await googleSignInAccount.authentication;
 
   final AuthCredential credential = GoogleAuthProvider.getCredential(
     accessToken: googleSignInAuthentication.accessToken,
@@ -107,7 +104,7 @@ Future<String> signInWithGoogle() async {
   return 'signInWithGoogle succeeded: $user';
 }
 
-void signOutGoogle() async{
+void signOutGoogle() async {
   await googleSignIn.signOut();
 
   print("User Sign Out");
